@@ -313,3 +313,12 @@ enterBtn.addEventListener("click", () => {
     }, 800);
 
 });
+
+// Pause music when user leaves the page
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        bgMusic.pause();
+    } else {
+        bgMusic.play().catch(() => {});
+    }
+});
